@@ -1,0 +1,35 @@
+json('variables.json')
+@import 'components/button'
+@import 'components/alert'
+@import 'components/progressbar'
+@font-face
+	font-family 'DankMono'
+	src url('./fonts/DankMono-Regular.otf') format('truetype')
+
+body
+	font-family 'DankMono'
+
+.blue 
+	background blue
+
+.green 
+	background green
+
+.red 
+	background red
+
+.yellow 
+	background yellow
+
+.black 
+	background black
+
+.with
+	&.blue
+		&.text
+			color blue
+
+	&.white
+		&.text
+			color white
+
