@@ -4,12 +4,20 @@ import RRWeb from 'rrweb'
 
 export default class Monitor {
 
+	tick: any
+	monitors: any
+	screenMonitorEvents: any[]
+	detection: any
+	apiEndpoint: string
+
 	constructor(
-		private tick: ICoreTick,
-		private detection: IDetection,
-		private apiEndpoint: string,
-		private monitors: IMonitorOptions
+		tick: any,
+		detection: any,
+		apiEndpoint: string,
+		monitors: any
 	) {
+
+		this.detection = detection
 
 		/** If monitors aren't defined */
 		if (!monitors) {
@@ -24,21 +32,21 @@ export default class Monitor {
 		}
 	}
 
-	protected monitorScreen(): void {
+	monitorScreen(): void {
 
 		this.screenMonitorEvents = []
 
 		if(this.startScreenRecording()) {
-			this.tick.addEvent(this.saveScreenState, 10, 'seconds')
+			this.tick.addEvent(this.sendScreenState, 10, 'seconds')
 		}
 
 	}
 
-	protected startScreenRecording(): void {
+	startScreenRecording(): void | false {
 
 		if (this.detection.hasMutationObserve()) {
 			RRWeb.record({
-				emit(e) => {
+				emit(e) {
 					this.screenMonitorEvents.push(e)
 				}
 			})
@@ -48,10 +56,12 @@ export default class Monitor {
 
 	}
 
+	/**
+		Send screen state to remote server
+	*/
+	sendScreenState() {
 
-	protected saveScreenState(): void {
-
-		const body = JSON.stringify({ events })
+		const body = JSON.stringify(this.screenMonitorEvents)
 
 		this.screenMonitorEvents = []
 

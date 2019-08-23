@@ -1,6 +1,5 @@
 // @flow
 
-import Handsontable from 'handsontable'
 import Detection from './detection'
 
 interface IOptions {
@@ -25,21 +24,20 @@ interface IOptions {
 
 export default class Core {
 
-	public Spreadsheet: Handsontable
+	tick: any
 
 	consturctor(
-		private options: IOptions
+		options: IOptions
 	) {
 		this.tick = []
-		this.Spreadsheet = Handsontable
 	}
 
 	request(
 		endpoint: string,
-		method: 'POST', 'GET',
+		method: 'POST' | 'GET',
 		type: string,
 		body: any,
-	): any | mull {
+	): any | null {
 
 		if (Detection.hasFetch()) {
 
@@ -60,14 +58,6 @@ export default class Core {
 				let xhr = new XMLHttpRequest()
 				xhr.open(method, endpoint, true)
 				xhr.setRequestHeader('Content-Type', type)
-				xhr.onreadystatechange = () => {
-					if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
-
-						// Health check for request						
-
-					}
-				}
-
 				xhr.send(body)
 			
 			} else {

@@ -1,27 +1,53 @@
 // @flow
 
-import Modernizr from 'modernizr'
-
 export default class Detection {
-	
-	hasFlash(): boolean {
-		return Modernizr.flash
+
+	static hasFlash(): boolean {
+
+		if (navigator.plugins != null 
+			&& navigator.plugins.length > 0) {
+
+        	return navigator.plugins["Shockwave Flash"] && true
+
+    	}
+
+		else if (~navigator.userAgent.toLowerCase().indexOf('webtv')) {
+			return true
+		}
+
+		else if (~navigator.appVersion.indexOf('MSIE') && !~navigator.userAgent.indexOf('Opera')) {
+
+			try {
+
+				// $FlowFixMe
+				return new ActiveXObject("ShockwaveFlash.ShockwaveFlash") && true
+
+			} catch(e) {}
+
+		}
+    	
+		return false
 	}
 
-	hasCanvas(): boolean {
-		return Modernizr.canvas
+	static hasCanvas(): boolean {
+		const canvas = document.createElement('canvas')
+		return canvas.getContext ? true : false
 	}
 
-	hasMutationObserve(): boolean {
-		return Modernizr.mutationobserver
+	static hasMutationObserve(): boolean {
+
+		return window.MutationObserver ? true : false
+
 	}
 
-	hasFetch(): boolean {
-		return Modernizr.fetch
+	static hasFetch(): boolean {
+		
+		return window.fetch ? true : false
+
 	}
 
-	hasXHR(): boolean {
-		return Modernizr.xhr2
+	static hasXHR(): boolean {
+		return window.XMLHttpRequest ? true : false
 	}
 
 }
