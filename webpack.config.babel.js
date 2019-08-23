@@ -11,22 +11,22 @@ module.exports = (env, argv) => {
     context: Path.resolve(__dirname, 'source'),
 
     plugins: [
-      new HtmlWebpackPlugin({
-        filename: 'index.html',
+		new HtmlWebpackPlugin({
+		filename: 'index.html',
 		template: './structure.page'
-      })
+		})
     ],
 
     entry: {
-      web: './test.js',
-	  core: './scripts/core.js'
+		web: './index.js',
+		core: './scripts/core.js'
     },
 
     devServer: {
 		contentBase: Path.resolve(__dirname, 'source'),
-      compress: true,
-      historyApiFallback: true,
-	  port: 8080
+		compress: true,
+		historyApiFallback: true,
+		port: 8080
     },
 
     output: {
@@ -35,9 +35,10 @@ module.exports = (env, argv) => {
     },
 
     devtool: 'source-map',
-	
+
     module: {
-      rules: [{
+      rules: [
+		{
           test: /\.(js|jsx)$/,
           exclude: /node_modules/,
           use: [
