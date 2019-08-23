@@ -1,6 +1,8 @@
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QYKEB6ZGTJNZ4)
 # Encora
-Encora is a UI Framework that has been designed from the ground up to create powerful, wonderful applications, websites and more.
+Encora is a UI and UX Framework that has been designed from the ground up to create powerful, websites, mobile apps, desktop apps and more. It comes with feature detection, audio, video, DOM capabilities out of the box. Additionally, a full featured game engine, maps engine and analytics systems are provided to create a complete frontend framework for all your needs.
+
+It is built fully compatiable for React and React Native.
 
 ## Grid System
 Encora is based around CSS Grid, the most powerful layout system CSS has to offer, functioning on both dimensions.
