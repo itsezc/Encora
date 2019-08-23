@@ -1,7 +1,7 @@
 {
   "name": "encora",
   "version": "1.0.0",
-  "description": "[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QYKEB6ZGTJNZ4)",
+  "description": "Encora is a UI framework built for the enterprise web targetting web, desktop and mobile platforms",
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --open"
