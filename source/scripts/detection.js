@@ -19,4 +19,9 @@ export default class Detection {
 	hasFetch(): boolean {
 		return Modernizr.fetch
 	}
+
+	hasXHR(): boolean {
+		return Modernizr.xhr2
+	}
+
 }
