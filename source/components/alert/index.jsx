@@ -5,7 +5,12 @@ type Props = {
 	color?: string
 }
 
-export default class Alert extends Component<Props> {
+export default class Alert extends Component<Props, Props> {
+
+	state = {
+		background: this.props.background,
+		color: this.props.color
+	}
 
 	constructor(props: Props) {
 		super(props)
@@ -13,8 +18,8 @@ export default class Alert extends Component<Props> {
 
 	render() {
 
-		const color: string = this.props.color ? this.props.color : 'white'
-		const background: string = this.props.background ? this.props.background : 'blue'
+		const color: string = this.state.color ? this.state.color : 'white'
+		const background: string = this.state.background ? this.state.background : 'blue'
 		const classes: string = `${background} alert with ${color} text`
 
 		return(
