@@ -4,26 +4,27 @@ export default class Media {
 
 	constructor(
 		type: 'video' | 'audio',
-		preload: boolean,
 		source: string,
 		options: object
 	) {
 	
 		this.element = document.createElement(type)
-		preload ? this.element.preload = 'auto' : this.element.prleoad = 'metadata'
 		this.element.src = source
 
 		this.options = options || {
+			preload: true,
 			loop: false,
 			controls: true,
-			autoplay: true
+			autoplay: true,
+			muted: true
 		}
 
+		this.options.preload ? this.element.preload = 'auto' : this.element.prleoad = 'metadata'
 		this.element.autoplay = this.options.autoplay
+		this.element.defaultMuted = this.options.muted
 
 		this.options.controls ? this.controlsEnable() : this.controlsDisable()
 		this.options.loop ? this.loop() : this.breakLoop()
-
 
 	}
 
@@ -104,10 +105,17 @@ export default class Media {
 		this.element.controls = false
 	}
 
+	get currentTime(): number {
+		return this.element.currentTime
+	}
+
+	set currentTime(time: number) {
+		this.element.currentTime = time
+	}
+
 	get duration() {
 		return this.element.duration
 	}
-
 
 	ended(): boolean {
 		return this.element.ended
