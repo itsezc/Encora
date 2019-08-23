@@ -47,7 +47,8 @@ export default class Detection {
 	}
 
 	static hasXHR(): boolean {
-		return window.XMLHttpRequest ? true : false
+		// $FlowFixMe
+		return window.XMLHttpRequest ? true : new ActiveXObject('Microsoft.XMLHTTP')
 	}
 
 }
