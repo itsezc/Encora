@@ -4,7 +4,8 @@
   "description": "Encora is a UI framework built for the enterprise web targetting web, desktop and mobile platforms",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --open"
+    "dev": "webpack-dev-server --open",
+    "flow": "flow"
   },
   "repository": {
     "type": "git",
@@ -18,8 +19,8 @@
   },
   "homepage": "https://github.com/ForetagInc/Encora#readme",
   "dependencies": {
+    "flow-bin": "^0.106.0",
     "handsontable": "^7.1.1",
-    "modernizr": "^3.7.1",
     "rrweb": "^0.7.23"
   },
   "devDependencies": {
@@ -36,6 +37,7 @@
     "eslint": "^5.16.0",
     "file-loader": "^3.0.1",
     "html-webpack-plugin": "^3.2.0",
+    "json-loader": "^0.5.7",
     "postcss": "^7.0.16",
     "postcss-cli": "^6.1.2",
     "postcss-loader": "^3.0.0",
