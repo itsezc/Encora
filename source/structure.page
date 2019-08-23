@@ -12,15 +12,8 @@ html(lang='en')
 		br 
 		br 
 		br
-		
+
 		.blue.progress-bar
 		//Need to find a way to set progress value via JS as CSS cant support values from data attributes
-
-		// CoreJS
-		br 
-		br 
-		br 
-		
-		a.corejs CoreJS => 
 
 
