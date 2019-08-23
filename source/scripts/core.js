@@ -1,5 +1,6 @@
 // @flow
 
+import Handsontable from 'handsontable'
 import Detection from './detection'
 
 interface IOptions {
@@ -24,10 +25,13 @@ interface IOptions {
 
 export default class Core {
 
+	public Spreadsheet: Handsontable
+
 	consturctor(
 		private options: IOptions
 	) {
 		this.tick = []
+		this.Spreadsheet = Handsontable
 	}
 
 	request(
