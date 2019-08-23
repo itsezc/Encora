@@ -15,9 +15,16 @@ export default class Media {
 
 		this.options = options || {
 			loop: false,
+			controls: true,
+			autoplay: true
 		}
 
+		this.element.autoplay = this.options.autoplay
+
+		this.options.controls ? this.controlsEnable() : this.controlsDisable()
 		this.options.loop ? this.loop() : this.breakLoop()
+
+
 	}
 
 	load() {
@@ -30,6 +37,10 @@ export default class Media {
 
 	pause() {
 		this.element.pause()
+	}
+
+	isPaused(): boolean {
+		this.element.paused
 	}
 
 	stop() {
@@ -74,8 +85,31 @@ export default class Media {
 	}
 
 	get playback() {
-		return this.elemenet.playbackRate
+		return this.element.playbackRate
 	}
 
-	
+	set volume(value: number) {
+		this.element.volume = value
+	}
+
+	get volume(): number {
+		return this.element.volume
+	}
+
+	controlsEnable(): void {
+		this.element.controls = true
+	}
+
+	controlsDisable(): void {
+		this.element.controls = false
+	}
+
+	get duration() {
+		return this.element.duration
+	}
+
+
+	ended(): boolean {
+		return this.element.ended
+	}
 }
