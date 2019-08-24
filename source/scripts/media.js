@@ -1,11 +1,14 @@
+//@flow
+
 export default class Media {
 
 	element: HTMLAudioElement | HTMLVideoElement
+	options: Object
 
 	constructor(
 		type: 'video' | 'audio',
 		source: string,
-		options: object
+		options?: Object
 	) {
 	
 		this.element = document.createElement(type)
@@ -16,16 +19,18 @@ export default class Media {
 			loop: false,
 			controls: true,
 			autoplay: true,
-			muted: true
+			muted: false
 		}
 
-		this.options.preload ? this.element.preload = 'auto' : this.element.prleoad = 'metadata'
+		this.options.preload ? this.element.preload = 'auto' : this.element.preload = 'metadata'
 		this.element.autoplay = this.options.autoplay
 		this.element.defaultMuted = this.options.muted
 
 		this.options.controls ? this.controlsEnable() : this.controlsDisable()
 		this.options.loop ? this.loop() : this.breakLoop()
 
+
+		document.body.appendChild(this.element)
 	}
 
 	load() {
@@ -41,7 +46,7 @@ export default class Media {
 	}
 
 	isPaused(): boolean {
-		this.element.paused
+		return this.element.paused
 	}
 
 	stop() {
