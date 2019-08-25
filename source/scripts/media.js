@@ -5,25 +5,63 @@ import * as React from 'react'
 
 export default class Media extends React.Component <IMediaOptions> {
 
-	element: { 
+	element: ?{ 
 		current?: HTMLAudioElement | HTMLVideoElement | null
-	}  | null
+	} 
 
-	constructor(props: IMediaOptions) {
+	constructor(props: IMediaOptions): void {
 		super(props)
 
 		this.element = React.createRef()
 	}
 
-	play() {
-		if (this.element && this.element.current) {
+	play(): void {
+		if (this.element 
+				&& this.element.current) {
+
 			this.element.current.play()
+
 		}
 	}
 
-	pause() {
-		if (this.element && this.element.current) {
+	pause(): void {
+		if (this.element 
+				&& this.element.current) {
+
 			this.element.current.pause()
+
+		}
+	}
+
+	stop(): void {
+		if (this.element 
+				&& this.element.current) {
+			
+			this.element.current.pause()
+			this.setCurrentTime(0)
+
+		}
+	}
+
+	getCurrentTime(): number | false {
+		if (this.element
+				&& this.element.current) {
+				
+			return this.element.current.currentTime
+
+		} else {
+
+			return false
+		
+		} 
+	}
+
+	setCurrentTime(seconds: number): void {
+		if (this.element 
+				&& this.element.current) {
+
+			this.element.current.currentTime = seconds
+
 		}
 	}
 
