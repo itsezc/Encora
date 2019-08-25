@@ -4,12 +4,20 @@ json('variables.json')
 @import 'components/alert'
 @import 'components/progressbar'
 
+
+@import './scrollbar.styl'
+
 @font-face
 	font-family 'DankMono'
 	src url('../assets/fonts/DankMono/Regular.otf') format('truetype')
 
-body
+html, body
+	overflow auto
 	font-family 'DankMono'
+	margin 0
+	padding 0
+	scrollbar-width thin
+	scrollbar-color rgba(40, 40, 40, .65)
 
 .blue 
 	background blue

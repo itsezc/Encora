@@ -1,7 +1,8 @@
 doctype html
 html(lang='en')
 	head 
-		title Encora Examples	
+		title Encora Examples
+		meta(name='viewport', content='width=device-width, initial-scale=1')
 	body
 		a.black.button.with.white.text Button
 
@@ -14,6 +15,59 @@ html(lang='en')
 		br 
 		br 
 		br
+		br 
+		br 
+		br
+		br 
+		br 
+		br
+		br 
+		br 
+		br
+		br 
+		br 
+		br
+		br 
+		br 
+		br
+		br 
+		br 
+		br
+		br 
+		br 
+		br
+		br 
+		br 
+		br
+		br 
+		br 
+		br
+		br 
+		br 
+		br
+		br 
+		br 
+		br
+		br 
+		br 
+		br
+		br 
+		br 
+		br
+		br 
+		br 
+		br
+		br 
+		br 
+		br
+		br 
+		br 
+		br
+		br 
+		br 
+		br
+
+		.red.alert.with.white.text Warning: CPU Load is excessive in your account and may result in termination.
 
 		.blue.progress-bar
 		//Need to find a way to set progress value via JS as CSS cant support values from data attributes
