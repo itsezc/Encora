@@ -3,12 +3,12 @@
 export default class Media {
 
 	element: HTMLAudioElement | HTMLVideoElement
-	options: Object
+	options: IMediaOptions
 
 	constructor(
 		type: 'video' | 'audio',
 		source: string,
-		options?: Object
+		options?: IMediaOptions
 	) {
 	
 		if (type === 'audio') {
