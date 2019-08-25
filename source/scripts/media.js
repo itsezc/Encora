@@ -1,18 +1,24 @@
 //@flow
 
 import * as React from 'react'
-
-
-export default class Media extends React.Component <IMediaOptions> {
+export default class Media extends React.Component <IMediaProps, IMediaState> {
 
 	element: ?{ 
 		current?: HTMLAudioElement | HTMLVideoElement | null
-	} 
+	} = React.createRef()
 
-	constructor(props: IMediaOptions): void {
+	constructor(props: IMediaProps): void {
 		super(props)
 
-		this.element = React.createRef()
+		this.state = {
+			event: this.props.event || null
+		}
+	}
+
+	componentWillMount() {
+		if (this.props.autoplay) {
+			this.play()
+		}
 	}
 
 	play(): void {

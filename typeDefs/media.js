@@ -1,4 +1,4 @@
-interface IMediaOptions {
+export type IMediaProps = {
 	type: 'audio' | 'video',
 	poster?: string,
 	source: string,
@@ -6,5 +6,10 @@ interface IMediaOptions {
 	preload: 'auto' | 'metadata' | 'none',
 	controls: boolean,
 	loop: boolean,
-	muted: boolean
+	muted: boolean,
+	event?: string
+}
+
+export type IMediaState = {
+	event: string | null
 }
