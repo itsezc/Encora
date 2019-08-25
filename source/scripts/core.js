@@ -1,10 +1,7 @@
 // @flow
 
 import Detection from './detection'
-
 import Animate from './animate'
-import Game from 'phaser'
-import * as Game3D from 'babylonjs'
 
 interface IOptions {
 	features: any[]
@@ -76,7 +73,5 @@ export default class Core {
 }
 
 export {
-	Animate,
-	Game,
-	Game3D
+	Animate
 }

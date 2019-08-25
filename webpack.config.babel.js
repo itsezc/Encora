@@ -8,31 +8,32 @@ module.exports = (env, argv) => {
   return {
     target: 'web',
 
-    context: Path.resolve(__dirname, 'source'),
+    context: Path.resolve(__dirname),
 
     plugins: [
 		new HtmlWebpackPlugin({
-		filename: 'index.html',
-		template: './structure.page'
+			filename: 'index.html',
+			template: './source/structure.page'
 		})
     ],
 
     entry: {
-		web: './index.js',
-		core: './scripts/core.js'
+		web: './source/index.js',
+		core: './source/scripts/core.js'
     },
 
     devServer: {
-		contentBase: Path.resolve(__dirname, 'source'),
+		contentBase: Path.resolve(__dirname),
 		compress: true,
 		historyApiFallback: true,
 		port: 8080
     },
 
     output: {
-      path: Path.join(__dirname, './dist'),
-      filename: '[name].min.js'
-    },
+		// publicPath: './',
+		path: Path.join(__dirname, './dist'),
+		filename: '[name].min.js'
+	},
 
     devtool: 'source-map',
 
