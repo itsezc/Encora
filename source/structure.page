@@ -1,5 +1,7 @@
 doctype html
 html(lang='en')
+	head 
+		title Encora Examples	
 	body
 		a.black.button.with.white.text Button
 
@@ -15,5 +17,3 @@ html(lang='en')
 
 		.blue.progress-bar
 		//Need to find a way to set progress value via JS as CSS cant support values from data attributes
-
-

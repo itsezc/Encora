@@ -1,6 +1,7 @@
 // @flow
 
 import Detection from './detection'
+import Animate from './animate'
 
 interface IOptions {
 	features: any[]
@@ -69,4 +70,8 @@ export default class Core {
 		}
 	}
 
+}
+
+export {
+	Animate
 }
