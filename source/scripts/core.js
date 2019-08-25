@@ -2,6 +2,9 @@
 
 import Detection from './detection'
 
+import Animate from './animate'
+import Game from 'phaser'
+
 interface IOptions {
 	features: any[]
 }
@@ -69,4 +72,9 @@ export default class Core {
 		}
 	}
 
+}
+
+export {
+	Animate,
+	Game
 }
