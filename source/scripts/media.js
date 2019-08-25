@@ -33,15 +33,15 @@ export default class Media {
 		document.body.appendChild(this.element)
 	}
 
-	load() {
+	load(): void {
 		this.element.load()
     }
 	
-	play() {
+	play(): void {
 		this.element.play()
 	}
 
-	pause() {
+	pause(): void {
 		this.element.pause()
 	}
 
@@ -49,7 +49,7 @@ export default class Media {
 		return this.element.paused
 	}
 
-	stop() {
+	stop(): void {
 		this.element.pause()
 		this.element.currentTime = 0
 	}
@@ -58,15 +58,15 @@ export default class Media {
 		return this.element.muted
 	}
 
-	mute() {
+	mute(): void {
 		this.element.muted = true
 	}
 
-	unmute() {
+	unmute(): void {
 		this.element.muted = false
 	}
 
-	toggleMute() {
+	toggleMute(): void {
 		this.element.muted = !this.element.muted
 	}
 
@@ -74,19 +74,19 @@ export default class Media {
 		return this.element.loop
 	}
 
-	loop() {
+	loop(): void {
 		this.element.loop = true
 	}
 
-	breakLoop() {
+	breakLoop(): void {
 		this.element.loop = false
 	}
 
-	toggleLoop() {
+	toggleLoop(): void {
 		this.element.loop = !this.element.loop
 	}
 
-	set playback(speed: number) {
+	set playback(speed: number): void {
 		this.element.playbackRate = speed
 	}
 
@@ -94,7 +94,7 @@ export default class Media {
 		return this.element.playbackRate
 	}
 
-	set volume(value: number) {
+	set volume(value: number): void {
 		this.element.volume = value
 	}
 
