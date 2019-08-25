@@ -1,128 +1,115 @@
 //@flow
 
-export default class Media {
+import * as React from 'react'
+export default class Media extends React.Component <IMediaProps, IMediaState> {
 
-	element: HTMLAudioElement | HTMLVideoElement
-	options: Object
+	element: ?{ 
+		current?: HTMLAudioElement | HTMLVideoElement | null
+	} = React.createRef()
 
-	constructor(
-		type: 'video' | 'audio',
-		source: string,
-		options?: Object
-	) {
-	
-		this.element = document.createElement(type)
-		this.element.src = source
+	constructor(props: IMediaProps): void {
+		super(props)
 
-		this.options = options || {
-			preload: true,
-			loop: false,
-			controls: true,
-			autoplay: true,
-			muted: false
+		this.state = {
+			event: this.props.event || null
 		}
-
-		this.options.preload ? this.element.preload = 'auto' : this.element.preload = 'metadata'
-		this.element.autoplay = this.options.autoplay
-		this.element.defaultMuted = this.options.muted
-
-		this.options.controls ? this.controlsEnable() : this.controlsDisable()
-		this.options.loop ? this.loop() : this.breakLoop()
-
-
-		document.body.appendChild(this.element)
 	}
 
-	load(): void {
-		this.element.load()
-    }
-	
+	componentWillMount() {
+		if (this.props.autoplay) {
+			this.play()
+		}
+	}
+
 	play(): void {
-		this.element.play()
+		if (this.element 
+				&& this.element.current) {
+
+			this.element.current.play()
+
+		}
 	}
 
 	pause(): void {
-		this.element.pause()
-	}
+		if (this.element 
+				&& this.element.current) {
 
-	isPaused(): boolean {
-		return this.element.paused
+			this.element.current.pause()
+
+		}
 	}
 
 	stop(): void {
-		this.element.pause()
-		this.element.currentTime = 0
+		if (this.element 
+				&& this.element.current) {
+			
+			this.element.current.pause()
+			this.setCurrentTime(0)
+
+		}
 	}
 
-	isMuted() {
-		return this.element.muted
+	getCurrentTime(): number | false {
+		if (this.element
+				&& this.element.current) {
+				
+			return this.element.current.currentTime
+
+		} else {
+
+			return false
+		
+		} 
 	}
 
-	mute(): void {
-		this.element.muted = true
+	setCurrentTime(seconds: number): void {
+		if (this.element 
+				&& this.element.current) {
+
+			this.element.current.currentTime = seconds
+
+		}
 	}
 
-	unmute(): void {
-		this.element.muted = false
-	}
+	render(): React.Node {
 
-	toggleMute(): void {
-		this.element.muted = !this.element.muted
-	}
+		if (this.props.type === 'video') {
 
-	isLooped() {
-		return this.element.loop
-	}
+			return(
+				<video
+					autoplay={this.props.preload}
+					preload={this.props.preload}
+					poster={this.props.poster}
+					controls={this.props.controls}
+					loop={this.props.loop}
+					muted={this.props.muted}
+					ref={video => (this.element = video)}
+				>
+					<source src={this.props.source} type='video/mp4' />
+				</video>
+			)
 
-	loop(): void {
-		this.element.loop = true
-	}
+		} else if (this.props.type === 'audio') {
 
-	breakLoop(): void {
-		this.element.loop = false
-	}
+			return(
+				<audio
+					autoplay={this.props.autoplay}
+					preload={this.props.preload}
+					controls={this.props.controls}
+					loop={this.props.loop}
+					muted={this.props.muted}
+					ref={audio => (this.element = audio)}
+				>
+					<source src={this.props.source} type='audio/mpeg' />
+				</audio>
+			)
 
-	toggleLoop(): void {
-		this.element.loop = !this.element.loop
-	}
+		} else {
 
-	set playback(speed: number): void {
-		this.element.playbackRate = speed
-	}
+			throw new Error('Component is neither Audio nor Video')
 
-	get playback() {
-		return this.element.playbackRate
-	}
+		}
 
-	set volume(value: number): void {
-		this.element.volume = value
-	}
-
-	get volume(): number {
-		return this.element.volume
-	}
-
-	controlsEnable(): void {
-		this.element.controls = true
-	}
-
-	controlsDisable(): void {
-		this.element.controls = false
-	}
-
-	get currentTime(): number {
-		return this.element.currentTime
-	}
-
-	set currentTime(time: number) {
-		this.element.currentTime = time
-	}
-
-	get duration() {
-		return this.element.duration
-	}
-
-	ended(): boolean {
-		return this.element.ended
 	}
 }
+

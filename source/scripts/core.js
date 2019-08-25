@@ -1,5 +1,6 @@
 // @flow
 
+import Log from './features/logger'
 import Detection from './detection'
 import Animate from './animate'
 
