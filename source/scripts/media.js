@@ -11,7 +11,28 @@ export default class Media {
 		options?: Object
 	) {
 	
-		this.element = document.createElement(type)
+		if (type === 'audio') {
+			
+			this.element = new Audio()
+
+			if (this.element.canPlayType('audio/mpeg').length <= 0) {
+
+				throw new console.error('Audio format is not supported by the browser')
+		
+			}
+
+		} else {
+
+			this.element = document.createElement('video')
+
+			if (this.element.canPlayType('video/mp4').length <= 0) {
+
+				throw new console.error('Video format is not supported by the browser')
+			
+			}
+
+		}
+
 		this.element.src = source
 
 		this.options = options || {
