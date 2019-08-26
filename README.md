@@ -1,5 +1,4 @@
-[![Donate via PayPal](https://img.shields.io/badge/Donate-PayPal-blue.svg?style=for-the-badge&logo=paypal)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QYKEB6ZGTJNZ4)
-[![Donate via Bitcoin](https://img.shields.io/badge/Donate-Bitcoin-orange.svg?style=for-the-badge&logo=bitcoin)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QYKEB6ZGTJNZ4)
+[![Donate via PayPal](https://img.shields.io/codeclimate/maintainability/itsezc/Encora?style=for-the-badge&logo=code-climate)](https://codeclimate.com/github/itsezc/Encora)
 
 # Encora
 Encora is a UI and UX Framework that has been designed from the ground up to create powerful, websites, mobile apps, desktop apps and more. It comes with feature detection, audio, video, DOM capabilities out of the box. Additionally, a full featured game engine, maps engine and analytics systems are provided to create a complete frontend framework for all your needs.
@@ -10,6 +9,10 @@ It is built around React and React Native.
 Encora is based around CSS Grid, the most powerful layout system CSS has to offer, functioning on both dimensions.
 
 ## Components
+
+Encora supports a large number of components out of the box for a prestine experience, most of these have the theme "Sirocco" from Foretag
+
+### Web
 - [ ] Accordion
 - [x] Alert / Message
 - [ ] Badges
@@ -43,7 +46,7 @@ Encora is based around CSS Grid, the most powerful layout system CSS has to offe
 - [ ] Table
 - [ ] Thumbnails
 
-## Mobile Components
+### Mobile
 
 - [ ] Map
 
@@ -62,7 +65,9 @@ Encora prompts users to update their browser if they're on an older, unsupported
 - iOS 
 - Android
 - Desktop
-- Windows 10 App
-- Xbox
 
 
+#### Donations
+[![Donate via PayPal](https://img.shields.io/badge/Donate-PayPal-blue.svg?style=for-the-badge&logo=paypal)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QYKEB6ZGTJNZ4)
+[![Donate via Bitcoin](https://img.shields.io/badge/Donate-Bitcoin-orange.svg?style=for-the-badge&logo=bitcoin)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QYKEB6ZGTJNZ4)
+[![Donate via Bitcoin](https://img.shields.io/badge/Donate-Ethereum-red.svg?style=for-the-badge&logo=ethereum)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QYKEB6ZGTJNZ4)
