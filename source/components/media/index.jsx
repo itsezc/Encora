@@ -71,12 +71,9 @@ export default class Media extends React.Component <IMediaProps, IMediaState> {
 		}
 	}
 
-	render(): React.Node {
-
-		if (this.props.type === 'video') {
-
-			return(
-				<video
+	renderVideo(): React.Node {
+		return(
+			<video
 					autoplay={this.props.preload}
 					preload={this.props.preload}
 					poster={this.props.poster}
@@ -85,14 +82,14 @@ export default class Media extends React.Component <IMediaProps, IMediaState> {
 					muted={this.props.muted}
 					ref={video => (this.element = video)}
 				>
-					<source src={this.props.source} type='video/mp4' />
-				</video>
-			)
+				<source src={this.props.source} type='video/mp4' />
+			</video>
+		)
+	}
 
-		} else if (this.props.type === 'audio') {
-
-			return(
-				<audio
+	renderAudio(): React.Node {
+		return(
+			<audio
 					autoplay={this.props.autoplay}
 					preload={this.props.preload}
 					controls={this.props.controls}
@@ -100,9 +97,20 @@ export default class Media extends React.Component <IMediaProps, IMediaState> {
 					muted={this.props.muted}
 					ref={audio => (this.element = audio)}
 				>
-					<source src={this.props.source} type='audio/mpeg' />
-				</audio>
-			)
+				<source src={this.props.source} type='audio/mpeg' />
+			</audio>
+		)
+	}
+
+	render(): React.Node {
+
+		if (this.props.type === 'video') {
+
+			return this.renderVideo()
+
+		} else if (this.props.type === 'audio') {
+
+			return this.renderAudio()
 
 		} else {
 
