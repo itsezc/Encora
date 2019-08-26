@@ -1,18 +1,8 @@
-import React, { Component } from 'react'
+// @flow
 
-type Props = {
-	background?: string,
-	color?: string,
-	message: string
-}
-
-export default class Alert extends Component<Props, Props> {
-
-	constructor(props: Props) {
-		super(props)
-	}
-
-	render() {
+import * as React from 'react'
+export default class Alert extends React.Component <IAlert> {
+	render(): React.Node {
 
 		const color: string = this.props.color ? this.props.color : 'white'
 		const background: string = this.props.background ? this.props.background : 'blue'
@@ -23,6 +13,6 @@ export default class Alert extends Component<Props, Props> {
 				{this.props.message}
 			</div>
 		)
+
 	}
-	
 }
