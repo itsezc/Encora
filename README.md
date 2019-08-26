@@ -1,4 +1,6 @@
-[![Donate via PayPal](https://img.shields.io/codeclimate/maintainability/itsezc/Encora?style=for-the-badge&logo=code-climate)](https://codeclimate.com/github/itsezc/Encora)
+[![CodeClimate Maintainability Ranking](https://img.shields.io/codeclimate/maintainability/itsezc/Encora?style=for-the-badge&logo=code-climate)](https://codeclimate.com/github/itsezc/Encora)
+[![Libraries Status](https://img.shields.io/librariesio/github/itsezc/Encora?style=for-the-badge&logo=libraries.io)](https://libraries.io/github/itsezc/Encora)
+
 
 # Encora
 Encora is a UI and UX Framework that has been designed from the ground up to create powerful, websites, mobile apps, desktop apps and more. It comes with feature detection, audio, video, DOM capabilities out of the box. Additionally, a full featured game engine, maps engine and analytics systems are provided to create a complete frontend framework for all your needs.
