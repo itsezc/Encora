@@ -1,8 +1,10 @@
-[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QYKEB6ZGTJNZ4)
+[![Donate via PayPal](https://img.shields.io/badge/Donate-PayPal-blue.svg?style=for-the-badge&logo=paypal)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QYKEB6ZGTJNZ4)
+[![Donate via Bitcoin](https://img.shields.io/badge/Donate-Bitcoin-orange.svg?style=for-the-badge&logo=bitcoin)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QYKEB6ZGTJNZ4)
+
 # Encora
 Encora is a UI and UX Framework that has been designed from the ground up to create powerful, websites, mobile apps, desktop apps and more. It comes with feature detection, audio, video, DOM capabilities out of the box. Additionally, a full featured game engine, maps engine and analytics systems are provided to create a complete frontend framework for all your needs.
 
-It is built fully compatiable for React and React Native.
+It is built around React and React Native.
 
 ## Grid System
 Encora is based around CSS Grid, the most powerful layout system CSS has to offer, functioning on both dimensions.
@@ -28,6 +30,7 @@ Encora is based around CSS Grid, the most powerful layout system CSS has to offe
 - [ ] Labels
 - [ ] List
 - [ ] Loader
+- [ ] Map
 - [ ] Modal
 - [ ] Navigation
 - [ ] Pagination
@@ -40,6 +43,10 @@ Encora is based around CSS Grid, the most powerful layout system CSS has to offe
 - [ ] Table
 - [ ] Thumbnails
 
+## Mobile Components
+
+- [ ] Map
+
 ## Browser Support
 - IE 11+
 - Chrome 57+
@@ -49,3 +56,13 @@ Encora is based around CSS Grid, the most powerful layout system CSS has to offe
 - Safari 10.1+
 
 Encora prompts users to update their browser if they're on an older, unsupported version, so it can provide the best experience.
+
+## Platform Support
+- Web
+- iOS 
+- Android
+- Desktop
+- Windows 10 App
+- Xbox
+
+
