@@ -20,9 +20,9 @@
   "homepage": "https://github.com/ForetagInc/Encora#readme",
   "dependencies": {
     "cesium": "^1.60.0",
-    "cesium-react": "^0.2.2",
     "flow-bin": "^0.106.0",
     "handsontable": "^7.1.1",
+    "resium": "^1.7.0",
     "rrweb": "^0.7.23"
   },
   "devDependencies": {

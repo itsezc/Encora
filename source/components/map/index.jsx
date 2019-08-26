@@ -1,10 +1,10 @@
 // @flow
 
-import * as React from 'react'
+import * as React from 'React'
 import { ArcGisMapServerImageryProvider } from 'cesium'
-import { Viewer, ImageryLayer } from 'cesium-react'
+import { Viewer, ImageryLayer } from 'resium'
 
-export default class Map extends React.Component <any> {
+export default class Map extends React.Component {
 
 	constructor(props: any): void {
 		super(props)
