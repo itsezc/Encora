@@ -16,26 +16,12 @@ export default class Media extends React.Component <IMediaProps, IMediaState> {
 	}
 
 	componentWillMount() {
-		if (this.props.autoplay) {
-			this.play()
-		}
-	}
-
-	play(): void {
-		if (this.element 
-				&& this.element.current) {
+		if (this.props.autoplay
+				&& this.element
+					&& this.element.current) {
 
 			this.element.current.play()
-
-		}
-	}
-
-	pause(): void {
-		if (this.element 
-				&& this.element.current) {
-
-			this.element.current.pause()
-
+			
 		}
 	}
 
