@@ -4,8 +4,7 @@ import IO from 'fs'
 
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 
-module.exports = (env, argv) => {
-  return {
+const Configuration = {
     target: 'web',
 
     context: Path.resolve(__dirname),
@@ -69,4 +68,7 @@ module.exports = (env, argv) => {
       ]
     }
   }
+
+module.exports = (env, argv) => {
+  return Configuration
 }
