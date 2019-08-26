@@ -4,23 +4,29 @@ export default class Detection {
 
 	static hasFlash(): boolean {
 
-		if (navigator.plugins !== null 
-			&& navigator.plugins.length > 0) {
+		let support = false
 
-        	return navigator.plugins["Shockwave Flash"] && true
-
-    	} else if (~navigator.appVersion.indexOf('MSIE') && !~navigator.userAgent.indexOf('Opera')) {
+		// IE
+		if ('ActiveXObject' in window) {
 
 			try {
 
 				// $FlowFixMe
-				return new ActiveXObject("ShockwaveFlash.ShockwaveFlash") && true
+				support = !!(new ActiveXObject('ShockwaveFlash.ShockwaveFlash'))
 
-			} catch(e) {}
+			} catch(e) {
+
+				support = false
+				
+			}
+
+		} else {
+
+			support = !!navigator.mimeTypes['application/x-shockwave-flash']
 
 		}
-    	
-		return false
+
+		return support
 	}
 
 	static hasCanvas(): boolean {
