@@ -4,18 +4,12 @@ export default class Detection {
 
 	static hasFlash(): boolean {
 
-		if (navigator.plugins != null 
+		if (navigator.plugins !== null 
 			&& navigator.plugins.length > 0) {
 
         	return navigator.plugins["Shockwave Flash"] && true
 
-    	}
-
-		else if (~navigator.userAgent.toLowerCase().indexOf('webtv')) {
-			return true
-		}
-
-		else if (~navigator.appVersion.indexOf('MSIE') && !~navigator.userAgent.indexOf('Opera')) {
+    	} else if (~navigator.appVersion.indexOf('MSIE') && !~navigator.userAgent.indexOf('Opera')) {
 
 			try {
 
