@@ -13,7 +13,7 @@ module.exports = (env, argv) => {
     plugins: [
 		new HtmlWebpackPlugin({
 			filename: 'index.html',
-			template: './source/structure.page'
+			template: './examples/structure.page'
 		})
     ],
 
