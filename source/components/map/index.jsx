@@ -4,7 +4,7 @@ import * as React from 'React'
 import { ArcGisMapServerImageryProvider } from 'cesium'
 import { Viewer, ImageryLayer } from 'resium'
 
-export default class Map extends React.Component {
+export default class Map extends React.Component <any> {
 
 	constructor(props: any): void {
 		super(props)
@@ -17,7 +17,8 @@ export default class Map extends React.Component {
 				<ImageryLayer
 					imageryProvider={new ArcGisMapServerImageryProvider({
 						url: '//services.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer'
-					})} />
+					})} 
+				/>
 			</Viewer>
 		
 		)
