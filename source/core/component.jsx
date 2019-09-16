@@ -2,11 +2,15 @@
 
 import * as React from 'react'
 
-const Component = (props) => {
+const Component = (props: any) => {
 
-	const { Tag } = props
-	
-	delete props.Tag
+	const Tag = props.tag
+	delete props.tag
+
+	const { describe } = props
+	delete props.style
+	delete props.className
+
 	
 	return(
 		<Tag
