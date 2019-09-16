@@ -35,15 +35,11 @@ export default class Detection {
 	}
 
 	static hasMutationObserve(): boolean {
-
 		return window.MutationObserver ? true : false
-
 	}
 
 	static hasFetch(): boolean {
-		
 		return window.fetch ? true : false
-
 	}
 
 	static hasXHR(): boolean {

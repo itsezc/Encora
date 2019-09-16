@@ -10,3 +10,8 @@ type IAlert = {
 	message: string,
 	closeable?: boolean
 }
+
+type IProgress = {
+	current?: number,
+	maximum: number
+}

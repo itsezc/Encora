@@ -22,52 +22,22 @@ html(lang='en')
 		br 
 		br
 		br 
-		br 
-		br
-		br 
-		br 
-		br
-		br 
-		br 
-		br
-		br 
-		br 
-		br
-		br 
-		br 
-		br
-		br 
-		br 
-		br
-		br 
-		br 
-		br
-		br 
-		br 
-		br
-		br 
-		br 
-		br
-		br 
-		br 
-		br
-		br 
-		br 
-		br
-		br 
-		br 
-		br
-		br 
-		br 
-		br
-		br 
-		br 
-		br
-		br 
-		br 
 		br
 
 		.red.alert.with.white.text Warning: CPU Load is excessive in your account and may result in termination.
 
-		.blue.progress-bar
+		progress(value='80', max='90')
 		//Need to find a way to set progress value via JS as CSS cant support values from data attributes
+
+		br
+		br
+		br
+		br 
+		br
+		br
+		br
+
+		input(
+			type='text'
+			placeholder='Test'
+		).with.blue.border
