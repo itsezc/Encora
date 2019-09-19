@@ -3,6 +3,9 @@ html(lang='en')
 	head 
 		title Encora Examples
 		meta(name='viewport', content='width=device-width, initial-scale=1')
+
+		link(href='https://cdn.remixicon.com/releases/v2.0.0/remixicon.css', rel='stylesheet')
+
 	body
 		a.black.button.with.white.text Button
 
