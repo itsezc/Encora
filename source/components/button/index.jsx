@@ -1,14 +1,13 @@
 // @flow
 
 import * as React from 'react'
-export default class Button extends React.Component <IButton> {
-	render(): React.Node {
+import styled from 'styled-components/native'
 
-		return(
-			<a className={`${this.props.background || 'gray'} button with ${this.props.color || 'white'} text`}>
-				{this.props.text}
-			</a>
-		)
-
-	}
+/**
+ * General component description in JSDoc format. Markdown is *supported*.
+ */
+export default () => {
+	return(
+		<p>Button</p>
+	)
 }
