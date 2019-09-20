@@ -11,7 +11,7 @@ Button with dynamic background and font color:
 
 ```js
 <Button
-    background='green'
+    background='orange'
     color='white'
 >
     Push Me
@@ -87,7 +87,7 @@ Plain icon
 
 ```js
 <Button
-    icon='admin-line'
+    icon='inbox-fill'
     width={50}
     circular
 />

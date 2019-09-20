@@ -21,6 +21,8 @@ type IProps = {
 
 	icon?: string,
 
+	iconStyle?: string,
+
 	circular: boolean,
 
 	children?: React.Node
@@ -41,6 +43,7 @@ const Button = (props: IProps) => {
 		bold,
 		underline,
 		icon,
+		iconStyle,
 		circular
 	} = props
 
