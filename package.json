@@ -25,6 +25,7 @@
     "cesium": "^1.60.0",
     "flow-bin": "^0.106.0",
     "handsontable": "^7.1.1",
+    "remixicon": "^2.0.0",
     "resium": "^1.7.0",
     "rrweb": "^0.7.23",
     "styled-components": "^4.3.2"
