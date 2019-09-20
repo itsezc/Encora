@@ -53,6 +53,7 @@
     "pug-loader": "^2.4.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
+    "react-native": "^0.60.5",
     "react-styleguidist": "^9.1.16",
     "style-loader": "^0.23.1",
     "stylus": "^0.54.5",

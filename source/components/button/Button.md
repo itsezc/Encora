@@ -1,29 +1,71 @@
-React component example:
+
+Default button:
 
 ```js
-<Button size="large">Push Me</Button>
+<Button>
+    Push Me
+</Button>
 ```
 
-You can add a custom props to an example wrapper:
+Button with dynamic background and font color:
 
-```js { "props": { "className": "checks" } }
-<Button>I’m transparent!</Button>
+```js
+<Button
+    background='green'
+    color='white'
+>
+    Push Me
+</Button>
 ```
 
-Or disable an editor by passing a `noeditor` modifier:
 
-```jsx noeditor
-<Button>Push Me</Button>
+A rounded button
+
+```js
+<Button
+    rounded
+>
+    Push Me
+</Button>
 ```
 
-To render an example as highlighted source code add a `static` modifier:
-
-```jsx static
-import React from 'react';
+```js
+<Button
+    rounded='50'
+>
+    Push Me
+</Button>
 ```
 
-Examples with all other languages are rendered only as highlighted source code, not an actual component:
+A fluid button
 
-```html
-<Button size="large">Push Me</Button>
+```js
+<Button
+    width='fluid'
+>
+    Push Me
+</Button>
 ```
+
+## Font
+
+Upper case font styling
+
+```js
+<Button
+    uppercase
+>
+    Push Me
+</Button>
+```
+
+Bold font
+
+```js
+<Button
+    bold
+>
+    Push Me
+</Button>
+```
+
