@@ -1,5 +1,8 @@
 module.exports = {
     components: 'source/components/**/*.jsx',
+    require: [
+        'remixicon/fonts/remixicon.css'
+    ],
     webpackConfig: {
         devServer: {
             clientLogLevel: 'warn'
@@ -14,12 +17,8 @@ module.exports = {
                     ]
                 },
                 {
-                    test: /\.styl$/,
-                    use: [
-                        'style-loader',
-                        'css-loader?-url!postcss-loader',
-                        'stylus-loader'
-                    ]
+                    test: /\.css$/,
+                    use: ['style-loader', 'css-loader']
                 },
                 {
                     test: /\.(pug|page)$/,

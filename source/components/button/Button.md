@@ -37,11 +37,13 @@ A rounded button
 </Button>
 ```
 
-A fluid button
+### Fluid 
+A fluid button takes up the space of the entire container
 
 ```js
 <Button
     width='fluid'
+    rounded
 >
     Push Me
 </Button>
@@ -79,3 +81,14 @@ Underline font
 </Button>
 ```
 
+## Icon
+
+Plain icon
+
+```js
+<Button
+    icon='admin-line'
+    width={50}
+    circular
+/>
+```

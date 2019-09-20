@@ -17,14 +17,20 @@ type IProps = {
 	/** Width in number (in pixels) or 'fluid' */
 	width?: string | number,
 	/** Underline font of the button */
-	underline?: boolean
+	underline?: boolean,
+
+	icon?: string,
+
+	circular: boolean,
+
+	children?: React.Node
 }
 
 /**
 	* A Button indicates a possible user action
 	*
 	* @version 1.0.0
-	* @author [Chiru B](https://github.com/itsezc) of [Foretag](https://foretag.co]) Inc.
+	* @author [Chiru B](https://github.com/itsezc)
 */
 const Button = (props: IProps) => {
 
@@ -33,7 +39,9 @@ const Button = (props: IProps) => {
 		color,
 		uppercase,
 		bold,
-		underline
+		underline,
+		icon,
+		circular
 	} = props
 
 	let { 
@@ -47,6 +55,8 @@ const Button = (props: IProps) => {
 		) :
 			rounded = rounded.toString().concat('px')
 	) : null
+
+	circular ? rounded = '100%' : null
 
 	width ? (
 		(typeof width === 'number') ? (
@@ -63,8 +73,9 @@ const Button = (props: IProps) => {
 		background-color: ${background};
 		color: ${color};
 		border-radius: ${rounded};
-		padding: 22px 14px;
+		padding: 14px;
 		width: ${width};
+		height: ${width};
 		font-size: 15px;
 		font-weight: ${props => bold ? '700' : '400'};
 		text-transform: ${props => uppercase ? 'uppercase' : 'none'};
@@ -73,17 +84,27 @@ const Button = (props: IProps) => {
 	`
 
 	return(
-		<Button>xD</Button>
+		<Button>
+			{
+				icon ? 
+					<i className={'ri-'.concat(icon)}></i>
+						: 
+					props.children
+			}
+		</Button>
 	)
 }
 
 Button.defaultProps = {
+	circular: false,
 	uppercase: false,
 	underline: false,
 	bold: false,
-	background: 'blue',
+	background: '#2364d2',
 	color: 'white',
-	rounded: false
+	rounded: false,
+	children: 'button',
+	icon: null
 }
 
 export default Button
