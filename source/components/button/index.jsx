@@ -15,7 +15,9 @@ type IProps = {
 	/** Font color of the button */
 	color?: string,
 	/** Width in number (in pixels) or 'fluid' */
-	width?: string | number
+	width?: string | number,
+	/** Underline font of the button */
+	underline?: boolean
 }
 
 /**
@@ -30,7 +32,8 @@ const Button = (props: IProps) => {
 		background, 
 		color,
 		uppercase,
-		bold
+		bold,
+		underline
 	} = props
 
 	let { 
@@ -63,8 +66,9 @@ const Button = (props: IProps) => {
 		padding: 22px 14px;
 		width: ${width};
 		font-size: 15px;
-		font-weight: ${props => bold ? '700' : '400'}
-		text-transform: ${ props => uppercase ? 'uppercase' : 'none'};
+		font-weight: ${props => bold ? '700' : '400'};
+		text-transform: ${props => uppercase ? 'uppercase' : 'none'};
+		text-decoration: ${props => underline ? 'underline' : 'none'};
 		outline: none;
 	`
 
@@ -75,6 +79,7 @@ const Button = (props: IProps) => {
 
 Button.defaultProps = {
 	uppercase: false,
+	underline: false,
 	bold: false,
 	background: 'blue',
 	color: 'white',

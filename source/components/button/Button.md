@@ -69,3 +69,13 @@ Bold font
 </Button>
 ```
 
+Underline font
+
+```js
+<Button
+    underline
+>
+    Push Me
+</Button>
+```
+
