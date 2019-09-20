@@ -11,7 +11,7 @@ Button with dynamic background and font color:
 
 ```js
 <Button
-    background='green'
+    background='orange'
     color='white'
 >
     Push Me
@@ -37,11 +37,13 @@ A rounded button
 </Button>
 ```
 
-A fluid button
+### Fluid 
+A fluid button takes up the space of the entire container
 
 ```js
 <Button
     width='fluid'
+    rounded
 >
     Push Me
 </Button>
@@ -69,3 +71,24 @@ Bold font
 </Button>
 ```
 
+Underline font
+
+```js
+<Button
+    underline
+>
+    Push Me
+</Button>
+```
+
+## Icon
+
+Plain icon
+
+```js
+<Button
+    icon='inbox-fill'
+    width={50}
+    circular
+/>
+```

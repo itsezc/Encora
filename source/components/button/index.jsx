@@ -3,16 +3,48 @@
 import * as React from 'react'
 import styled from 'styled-components'
 
+type IProps = {
+	/** Font casing of the button */
+	uppercase?: boolean,
+	/** Font styling thickness of the button */
+	bold?: boolean,
+	/** Rounded border (with a number value - optional) of the button */
+	rounded?: boolean | number,
+	/** Background image or color (name, hex, rgb, rgba, hsl) of the button */
+	background?: string,
+	/** Font color of the button */
+	color?: string,
+	/** Width in number (in pixels) or 'fluid' */
+	width?: string | number,
+	/** Underline font of the button */
+	underline?: boolean,
+
+	icon?: string,
+
+	iconStyle?: string,
+
+	circular: boolean,
+
+	children?: React.Node
+}
+
 /**
-* A button component is used for interactivity
+	* A Button indicates a possible user action
+	*
+	* @version 1.0.0
+	* @author [Chiru B](https://github.com/itsezc)
 */
-export default (props) => {
+const Button = (props: IProps) => {
 
 	const { 
 		background, 
 		color,
 		uppercase,
-		bold
+		bold,
+		underline,
+		icon,
+		iconStyle,
+		circular
 	} = props
 
 	let { 
@@ -24,12 +56,14 @@ export default (props) => {
 		(typeof rounded === 'boolean') ? (
 			rounded = '4px'
 		) :
-			rounded = rounded.concat('px')
+			rounded = rounded.toString().concat('px')
 	) : null
+
+	circular ? rounded = '100%' : null
 
 	width ? (
 		(typeof width === 'number') ? (
-			width = width.concat('px')
+			width = width.toString().concat('px')
 		) : (
 			width === 'fluid' ?
 				width = '100%'
@@ -39,18 +73,41 @@ export default (props) => {
 	) : null
 
 	const Button = styled.button`
-		background-color: ${ props => background ? background : 'blue' };
-		color: ${ props => color ? color : 'white' };
+		background-color: ${background};
+		color: ${color};
 		border-radius: ${rounded};
-		padding: 22px 14px;
+		padding: 14px;
 		width: ${width};
+		height: ${width};
 		font-size: 15px;
-		font-weight: ${props => bold ? '700' : '400'}
-		text-transform: ${ props => uppercase ? 'uppercase' : 'none'};
+		font-weight: ${props => bold ? '700' : '400'};
+		text-transform: ${props => uppercase ? 'uppercase' : 'none'};
+		text-decoration: ${props => underline ? 'underline' : 'none'};
 		outline: none;
 	`
 
 	return(
-		<Button>xD</Button>
+		<Button>
+			{
+				icon ? 
+					<i className={'ri-'.concat(icon)}></i>
+						: 
+					props.children
+			}
+		</Button>
 	)
 }
+
+Button.defaultProps = {
+	circular: false,
+	uppercase: false,
+	underline: false,
+	bold: false,
+	background: '#2364d2',
+	color: 'white',
+	rounded: false,
+	children: 'button',
+	icon: null
+}
+
+export default Button

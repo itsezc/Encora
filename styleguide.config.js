@@ -10,16 +10,12 @@ module.exports = {
                     test: /\.(js|jsx)$/,
                     exclude: /node_modules/,
                     use: [
-                        'babel-loader'
+                        'babel-loader',
                     ]
                 },
                 {
-                    test: /\.styl$/,
-                    use: [
-                        'style-loader',
-                        'css-loader?-url!postcss-loader',
-                        'stylus-loader'
-                    ]
+                    test: /\.css$/,
+                    use: ['style-loader', 'css-loader']
                 },
                 {
                     test: /\.(pug|page)$/,
@@ -28,12 +24,15 @@ module.exports = {
                     ]
                 },
                 {
-                    test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+                    test: /\.(png|gif|jpg|jpeg|svg|xml|json|ttf|woff|woff2|eot)$/,
                     use: [
                         'url-loader?limit=100000'
                     ]
                 }
             ]
         }
-    }
+    },
+    require: [
+        'remixicon/fonts/remixicon.css'
+    ]
 }
