@@ -5,8 +5,10 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --open",
-	"flow": "flow",
-	"docs:generate": "gitbook build"
+    "flow": "flow",
+    "docs:generate": "gitbook build",
+    "styleguide": "styleguidist server",
+    "styleguide:build": "styleguidist build"
   },
   "repository": {
     "type": "git",
@@ -24,7 +26,8 @@
     "flow-bin": "^0.106.0",
     "handsontable": "^7.1.1",
     "resium": "^1.7.0",
-    "rrweb": "^0.7.23"
+    "rrweb": "^0.7.23",
+    "styled-components": "^4.3.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.4",
@@ -33,6 +36,7 @@
     "@babel/plugin-transform-runtime": "^7.4.4",
     "@babel/preset-env": "^7.4.4",
     "@babel/preset-flow": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
     "@babel/runtime": "^7.4.4",
     "autoprefixer": "^9.5.1",
     "babel-loader": "^8.0.6",
@@ -49,6 +53,8 @@
     "pug-loader": "^2.4.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
+    "react-native": "^0.60.5",
+    "react-styleguidist": "^9.1.16",
     "style-loader": "^0.23.1",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",

@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        ".pagee": "pug"
+    },
+    "files.exclude": {
+        "**/.vscode": true
+    }
+}
