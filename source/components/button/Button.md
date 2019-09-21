@@ -87,6 +87,8 @@ Spaced out font
 <Button
     uppercase
     spaced
+    bold
+    rounded
 >
     Push Me
 </Button>

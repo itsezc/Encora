@@ -27,7 +27,11 @@ type IProps = {
 
 	children?: React.Node,
 
-	shadow?: string
+	shadow?: string,
+
+	spaced?: boolean,
+
+	font?: string,
 }
 
 /**
@@ -47,7 +51,8 @@ const Button = (props: IProps) => {
 		icon,
 		iconStyle,
 		circular,
-		spaced
+		spaced,
+		font
 	} = props
 
 	let { 
@@ -97,6 +102,7 @@ const Button = (props: IProps) => {
 		width: ${width};
 		height: ${width};
 		font-size: 15px;
+		font-family: ${props => font ? font : 'Fira Sans, sans-serif'};
 		font-weight: ${props => bold ? '700' : '400'};
 		text-transform: ${props => uppercase ? 'uppercase' : 'none'};
 		text-decoration: ${props => underline ? 'underline' : 'none'};
