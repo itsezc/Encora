@@ -98,7 +98,7 @@ const Button = (props: IProps) => {
 		background-color: ${background};
 		color: ${color};
 		border-radius: ${rounded};
-		padding: 14px;
+		padding: ${circular ? '14px' : '14px 30px'};
 		width: ${width};
 		height: ${width};
 		font-size: 15px;
