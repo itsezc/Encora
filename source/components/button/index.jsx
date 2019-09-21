@@ -47,6 +47,7 @@ const Button = (props: IProps) => {
 		icon,
 		iconStyle,
 		circular,
+		spaced
 	} = props
 
 	let { 
@@ -80,8 +81,12 @@ const Button = (props: IProps) => {
 				shadow = '0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08)'
 			break
 	
+		case 'spacious':
+				shadow = '0 20px 40px 0 rgba(35,100,210,.2)'
+			break
+
 		default:
-			break;
+			break
 	}
 
 	const Button = styled.button`
@@ -95,6 +100,7 @@ const Button = (props: IProps) => {
 		font-weight: ${props => bold ? '700' : '400'};
 		text-transform: ${props => uppercase ? 'uppercase' : 'none'};
 		text-decoration: ${props => underline ? 'underline' : 'none'};
+		letter-spacing: ${props => spaced ? '2px': 0};
 		box-shadow: ${shadow};
 		outline: none;
 		cursor: pointer;
