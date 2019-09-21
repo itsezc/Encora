@@ -37,6 +37,19 @@ A rounded button
 </Button>
 ```
 
+### Shadow
+
+A button with stripe esec shadowing
+
+```js
+<Button
+    rounded
+    shadow='stripe'
+>
+    Push Me
+</Button>
+```
+
 ### Fluid 
 A fluid button takes up the space of the entire container
 
