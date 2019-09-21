@@ -1,3 +1,5 @@
+const path = require('path')
+
 module.exports = {
     components: 'source/components/**/*.jsx',
     webpackConfig: {
@@ -18,13 +20,17 @@ module.exports = {
                     use: ['style-loader', 'css-loader']
                 },
                 {
+                    test: /\.styl$/,
+                    use: ['style-loader', 'css-loader', 'stylus-loader']
+                },
+                {
                     test: /\.(pug|page)$/,
                     use: [
                         'pug-loader'
                     ]
                 },
                 {
-                    test: /\.(png|gif|jpg|jpeg|svg|xml|json|ttf|woff|woff2|eot)$/,
+                    test: /\.(png|gif|jpg|jpeg|svg|xml|json|ttf|woff|woff2|eot|otf)$/,
                     use: [
                         'url-loader?limit=100000'
                     ]
@@ -33,6 +39,7 @@ module.exports = {
         }
     },
     require: [
-        'remixicon/fonts/remixicon.css'
+        'remixicon/fonts/remixicon.css',
+        path.join(__dirname, 'source/styles/fonts.styl')
     ]
 }
