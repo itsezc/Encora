@@ -1,7 +1,21 @@
 const path = require('path')
 
+const webpack = require("webpack")
+
+const CopyWebpackPlugin = require("copy-webpack-plugin")
+
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackTagsPlugin = require('html-webpack-tags-plugin')
+
 module.exports = {
     components: 'source/components/**/*.jsx',
+    require: [
+        'remixicon/fonts/remixicon.css',
+        path.join(__dirname, 'source/styles/fonts.styl'),
+        'cesium/Build/Cesium/Widgets/widgets.css',
+        'cesium/Build/Cesium/Cesium.js'
+
+    ],
     webpackConfig: {
         devServer: {
             clientLogLevel: 'warn'
@@ -36,10 +50,18 @@ module.exports = {
                     ]
                 }
             ]
+        },
+        output: {
+            // Needed to compile multiline strings in Cesium
+            sourcePrefix: ''
+        },
+        amd: {
+            // Enable webpack-friendly use of require in Cesium
+            toUrlUndefined: true
+        },
+        node: {
+            // Resolve node module use of fs
+            fs: 'empty'
         }
     },
-    require: [
-        'remixicon/fonts/remixicon.css',
-        path.join(__dirname, 'source/styles/fonts.styl')
-    ]
 }
