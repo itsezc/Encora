@@ -14,20 +14,34 @@ module.exports = {
         path.join(__dirname, 'source/styles/fonts.styl'),
         'cesium/Build/Cesium/Widgets/widgets.css',
         'cesium/Build/Cesium/Cesium.js'
-
     ],
     webpackConfig: {
         devServer: {
             clientLogLevel: 'warn'
         },
+        externals: {
+            cesium: "Cesium"
+        },
         module: {
             rules: [
                 {
                     test: /\.(js|jsx)$/,
-                    exclude: /node_modules/,
+                    // exclude: /node_modules/,
+                    // include: [
+                    //     path.resolve(__dirname, 'source'),
+                    //     path.resolve(__dirname, 'node_modules/cesium-react')
+                    // ],
                     use: [
                         'babel-loader',
                     ]
+                },
+                {
+                    test: /\.(js|mjs|jsx)$/,
+                    loader: 'string-replace-loader',
+                    options: {
+                        search: '#!/usr/bin/env node',
+                        replace: '',
+                    }
                 },
                 {
                     test: /\.css$/,
@@ -64,4 +78,23 @@ module.exports = {
             fs: 'empty'
         }
     },
+    dangerouslyUpdateWebpackConfig(webpackConfig, env) { 
+       
+        const newPlugins = [
+            new CopyWebpackPlugin([
+                {
+                    from: 'node_modules/cesium/Build/CesiumUnminified/Cesium.js',
+                    to: 'cesium',
+                },
+            ]),
+            new webpack.DefinePlugin({
+                CESIUM_BASE_URL: JSON.stringify('/cesium'),
+            }),
+        ]
+
+        webpackConfig.plugins = webpackConfig.plugins.concat(newPlugins)
+
+        return webpackConfig
+
+    }
 }
