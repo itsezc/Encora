@@ -25,7 +25,13 @@ type IProps = {
 
 	circular: boolean,
 
-	children?: React.Node
+	children?: React.Node,
+
+	shadow?: string,
+
+	spaced?: boolean,
+
+	font?: string,
 }
 
 /**
@@ -44,12 +50,15 @@ const Button = (props: IProps) => {
 		underline,
 		icon,
 		iconStyle,
-		circular
+		circular,
+		spaced,
+		font
 	} = props
 
 	let { 
 		rounded,
-		width
+		width,
+		shadow
 	} = props
 
 	rounded ? (
@@ -72,18 +81,35 @@ const Button = (props: IProps) => {
 		)
 	) : null
 
+	switch (shadow) {
+		case 'stripe':
+				shadow = '0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08)'
+			break
+	
+		case 'spacious':
+				shadow = '0 20px 40px 0 rgba(35,100,210,.2)'
+			break
+
+		default:
+			break
+	}
+
 	const Button = styled.button`
 		background-color: ${background};
 		color: ${color};
 		border-radius: ${rounded};
-		padding: 14px;
+		padding: ${circular ? '14px' : '14px 30px'};
 		width: ${width};
 		height: ${width};
 		font-size: 15px;
+		font-family: ${props => font ? font : 'Fira Sans, sans-serif'};
 		font-weight: ${props => bold ? '700' : '400'};
 		text-transform: ${props => uppercase ? 'uppercase' : 'none'};
 		text-decoration: ${props => underline ? 'underline' : 'none'};
+		letter-spacing: ${props => spaced ? '2px': 0};
+		box-shadow: ${shadow};
 		outline: none;
+		cursor: pointer;
 	`
 
 	return(

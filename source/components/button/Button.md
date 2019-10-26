@@ -3,7 +3,7 @@ Default button:
 
 ```js
 <Button>
-    Push Me
+    Button
 </Button>
 ```
 
@@ -14,7 +14,7 @@ Button with dynamic background and font color:
     background='orange'
     color='white'
 >
-    Push Me
+    Button
 </Button>
 ```
 
@@ -25,7 +25,7 @@ A rounded button
 <Button
     rounded
 >
-    Push Me
+    Button
 </Button>
 ```
 
@@ -33,7 +33,7 @@ A rounded button
 <Button
     rounded='50'
 >
-    Push Me
+    Button
 </Button>
 ```
 
@@ -45,7 +45,7 @@ A fluid button takes up the space of the entire container
     width='fluid'
     rounded
 >
-    Push Me
+    Button
 </Button>
 ```
 
@@ -57,7 +57,7 @@ Upper case font styling
 <Button
     uppercase
 >
-    Push Me
+    Button
 </Button>
 ```
 
@@ -67,7 +67,7 @@ Bold font
 <Button
     bold
 >
-    Push Me
+    Button
 </Button>
 ```
 
@@ -77,7 +77,20 @@ Underline font
 <Button
     underline
 >
-    Push Me
+    Button
+</Button>
+```
+
+Spaced out font
+
+```js
+<Button
+    uppercase
+    spaced
+    bold
+    rounded
+>
+    Button
 </Button>
 ```
 
@@ -91,4 +104,33 @@ Plain icon
     width={50}
     circular
 />
+```
+
+### Shadow
+
+A button with stripe esec shadowing
+
+```js
+<Button
+    uppercase
+    spaced
+    bold
+    rounded
+    shadow='stripe'
+>
+    Button
+</Button>
+```
+A button with spacious shadowing
+
+```js
+<Button
+    uppercase
+    spaced
+    bold
+    rounded
+    shadow='spacious'
+>
+    Button
+</Button>
 ```
