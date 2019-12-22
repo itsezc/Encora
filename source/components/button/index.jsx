@@ -32,6 +32,14 @@ type IProps = {
 	spaced?: boolean,
 
 	font?: string,
+
+	hoverColor?: string,
+
+	hoverBackground?: string,
+
+	hoverAnimation?: string,
+
+	transition?: number
 }
 
 /**
@@ -52,7 +60,10 @@ const Button = (props: IProps) => {
 		iconStyle,
 		circular,
 		spaced,
-		font
+		font,
+		transition,
+		hoverColor,
+		hoverBackground
 	} = props
 
 	let { 
@@ -110,6 +121,12 @@ const Button = (props: IProps) => {
 		box-shadow: ${shadow};
 		outline: none;
 		cursor: pointer;
+
+		&:hover {
+			background: ${hoverBackground || 'black'};
+			color: ${hoverColor || 'white'};
+			transition: all ${transition || '0.5s'};
+		}
 	`
 
 	return(

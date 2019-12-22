@@ -37,7 +37,7 @@ A rounded button
 </Button>
 ```
 
-### Fluid 
+#### Fluid 
 A fluid button takes up the space of the entire container
 
 ```js
@@ -49,7 +49,7 @@ A fluid button takes up the space of the entire container
 </Button>
 ```
 
-## Font
+### Font
 
 Upper case font styling
 
@@ -94,7 +94,7 @@ Spaced out font
 </Button>
 ```
 
-## Icon
+### Icon
 
 Plain icon
 
@@ -106,7 +106,7 @@ Plain icon
 />
 ```
 
-### Shadow
+#### Shadow
 
 A button with stripe esec shadowing
 
@@ -132,5 +132,18 @@ A button with spacious shadowing
     shadow='spacious'
 >
     Button
+</Button>
+```
+
+
+#### Animation
+
+Animations on a button
+
+```js
+<Button
+	transition={'1s'}
+>
+
 </Button>
 ```
