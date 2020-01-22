@@ -3,18 +3,17 @@
 
 
 # Encora
-Encora is a UI and UX Framework that has been designed from the ground up to create powerful, websites, mobile apps, desktop apps and more. It comes with feature detection, audio, video, DOM capabilities out of the box. Additionally, a full featured game engine, maps engine and analytics systems are provided to create a complete frontend framework for all your needs.
 
-It is built around React and React Native.
+A fully featured RANG (React, ArangoDB, Node and GraphQL) based fullstack framework for React Native, allowing you to create and deploy apps on a web and native platforms alike. Encora also packs with 100+ components for a range of use cases and a theme inspired by "Sirocco" from Foretag.
 
-## Grid System
-Encora is based around CSS Grid, the most powerful layout system CSS has to offer, functioning on both dimensions.
+The goal of the project is to create an ecosystem that bridges the gap between web and native applications and create a performance orientated backend that just plugs and plays for any use case. In the long term, we are looking to incorporate the likes of Game Engines, VR, Maps and more.
 
-## Components
+## Styling
 
-Encora supports a large number of components out of the box for a prestine experience, most of these have the theme "Sirocco" from Foretag
+Each app deserves to be look and feel unique, while the default components allow you to quickly prototype layouts, Encora allows you to have maximum freedom when it comes to styling them to your needs.
 
-### Web
+### Components
+
 - [ ] Accordion
 - [x] Alert / Message
 - [ ] Badges
@@ -48,11 +47,9 @@ Encora supports a large number of components out of the box for a prestine exper
 - [ ] Table
 - [ ] Thumbnails
 
-### Mobile
+## Web & Browser Support
+Encora fully supports hybdr
 
-- [ ] Map
-
-## Browser Support
 - IE 11+
 - Chrome 57+
 - Opera 44+
@@ -61,12 +58,6 @@ Encora supports a large number of components out of the box for a prestine exper
 - Safari 10.1+
 
 Encora prompts users to update their browser if they're on an older, unsupported version, so it can provide the best experience.
-
-## Platform Support
-- Web
-- iOS 
-- Android
-- Desktop
 
 
 #### Donations
