@@ -3,7 +3,6 @@
 import * as React from 'react'
 import styled from 'styled-components'
 
-
 /**
 	* A Grid is a layout component
 	*

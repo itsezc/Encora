@@ -3,6 +3,8 @@
 import * as React from 'react'
 import styled from 'styled-components'
 
+import { addPx } from '../../scripts/features/utils'
+
 type IProps = {
 	/** Font casing of the button */
 	uppercase?: boolean,
@@ -23,12 +25,12 @@ type IProps = {
 
 	iconStyle?: string,
 
-	circular: boolean,
+	circular?: boolean,
 
 	children?: React.Node,
 
 	shadow?: string,
-
+	/** Spaced between text */
 	spaced?: boolean,
 
 	font?: string,
@@ -76,14 +78,14 @@ const Button = (props: IProps) => {
 		(typeof rounded === 'boolean') ? (
 			rounded = '4px'
 		) :
-			rounded = rounded.toString().concat('px')
+			rounded = addPx('px')
 	) : null
 
 	circular ? rounded = '100%' : null
 
 	width ? (
 		(typeof width === 'number') ? (
-			width = width.toString().concat('px')
+			width = addPx(width)
 		) : (
 			width === 'fluid' ?
 				width = '100%'

@@ -111,6 +111,7 @@ Plain icon
 A button with stripe esec shadowing
 
 ```js
+
 <Button
     uppercase
     spaced
@@ -120,6 +121,7 @@ A button with stripe esec shadowing
 >
     Button
 </Button>
+
 ```
 A button with spacious shadowing
 
@@ -143,7 +145,6 @@ Animations on a button
 ```js
 <Button
 	transition={'1s'}
->
-
+>	Animated Button
 </Button>
 ```
