@@ -1,0 +1,1 @@
+export const addPx = (value) => value.toString().concat('px')
