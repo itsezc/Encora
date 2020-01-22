@@ -1,1 +1,1 @@
-import { JWT, BCrypt } from './auth'
+export * as Auth from './auth'
