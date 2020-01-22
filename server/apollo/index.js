@@ -15,6 +15,6 @@ export const init = (resolvers: ?Object, typeDefs: ?Object, schema: ?Object) => 
 
 export const start = (server, port: ?number = 8086) => {
 	return server
-			.listen(port)
-			.then(( info ) => console.log(`ENCORA - Apollo GraphQL server started on port ${info.port}`))
+		.listen(port)
+		.then(( info ) => console.log(`ENCORA - Apollo GraphQL server started on port ${info.port}`))
 }
