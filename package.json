@@ -27,6 +27,7 @@
     "apollo-server": "^2.9.16",
     "bcrypt": "^3.0.7",
     "cesium": "^1.62.0",
+    "cruddl": "^1.1.0-alpha.4",
     "flow-bin": "^0.106.3",
     "graphql": "^14.5.8",
     "handsontable": "^7.2.2",
