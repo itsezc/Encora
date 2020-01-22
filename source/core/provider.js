@@ -7,7 +7,7 @@ import { GraphQLClient } from './graphql'
 
 import { StateContext } from './state'
 
-const Provider = ({ reducer, initialState, children }) => (
+const Provider = (reducer: any, initialState: Object, children: React.Node) => (
 	<StateContext.Provider
 		value={React.useReducer(reducer, initialState)}
 	>
@@ -16,3 +16,7 @@ const Provider = ({ reducer, initialState, children }) => (
 		</ApolloProvider>
 	</StateContext.Provider>
 )
+
+export {
+	Context
+}

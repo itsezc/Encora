@@ -1,6 +1,7 @@
-import { GraphProvider, GQL } from './core/graphql'
+import { GQL } from './core/graphql'
+import { Context } from './core/state'
 
 export {
-	GraphProvider,
+	Context,
 	GQL
 }
