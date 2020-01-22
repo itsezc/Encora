@@ -1,4 +1,4 @@
-import JWT from 'jsonwebtoken'
+import { Sign } from './jwt'
 import { Hash, Compare } from './bcrypt'
 
 export {
