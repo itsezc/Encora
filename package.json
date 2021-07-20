@@ -71,7 +71,7 @@
     "pug-loader": "^2.4.0",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
-    "react-native": "^0.60.6",
+    "react-native": "^0.62.3",
     "react-styleguidist": "^10.6.1",
     "shebang-loader": "0.0.1",
     "string-replace-loader": "^2.2.0",
